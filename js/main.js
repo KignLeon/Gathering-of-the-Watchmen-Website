@@ -76,7 +76,7 @@
 
     /* ---- Scroll Reveal (IntersectionObserver) ---- */
     function initScrollReveal() {
-        const elements = document.querySelectorAll('.animate-on-scroll, .reveal, .reveal-scale');
+        const elements = document.querySelectorAll('.animate-on-scroll, .reveal, .reveal-scale, .reveal-fade');
         if (!elements.length) return;
 
         const observer = new IntersectionObserver((entries) => {
