@@ -87,9 +87,31 @@
                         Prayer is the vital foundation for building anything in the Kingdom of God. Understanding the
                         principles of effective prayer advances the Kingdom.
                     </p>
-                    <p style="margin-top:2rem;font-size:0.9rem;color:var(--gold);">
-                        <strong>Founded by Watchman Tameka Arceneaux</strong>
-                    </p>
+                    <!-- About the Founder -->
+                    <div class="founder-block" style="margin-top:2.5rem;">
+                      <h3 style="font-size:1.1rem;color:var(--gold);margin-bottom:0.75rem;">About the Founder</h3>
+                      <p class="founder-preview" style="color:var(--ivory-dim);font-size:0.95rem;line-height:1.7;">
+                        Tameka Arceneaux is a native of San Diego, California. She is the proud mother of two and grandmother of five. Since 2015, she has been a devoted member of Higher Praise Christian Fellowship, serving faithfully under the leadership of Apostle Donald and Pastor Francis Jones.
+                      </p>
+                      <div class="founder-full" id="founder-full" style="display:none;">
+                        <p class="text-muted" style="font-size:0.95rem;line-height:1.7;margin-top:0.75rem;">
+                          There, she serves as Youth Pastor and one of the Chief Intercessors, carrying a deep passion for mentoring the next generation and standing in the gap through prayer.
+                        </p>
+                        <p class="text-muted" style="font-size:0.95rem;line-height:1.7;margin-top:0.75rem;">
+                          Tameka accepted the Lord as her personal Savior at a very early age. She was raised and spiritually nurtured at Miracle Deliverance Temple Church of God in Christ under the leadership of the late Pastor John and Shirley Wilson, where her foundation in faith and prayer was firmly established.
+                        </p>
+                        <p class="text-muted" style="font-size:0.95rem;line-height:1.7;margin-top:0.75rem;">
+                          In 2006, Tameka joined Morris Cerullo World Evangelism and traveled with Morris Cerullo as a Prayer Strike Force member. This team was assigned to enter regions prior to Dr. Cerullo's arrival to spiritually prepare the territory—engaging in strategic intercession to take dominion in the spiritual realm and ready the atmosphere for a move of God.
+                        </p>
+                        <p class="text-muted" style="font-size:0.95rem;line-height:1.7;margin-top:0.75rem;">
+                          Dr. Cerullo firmly believed that prayer is the foundation of every success in the Kingdom of God. He emphasized the importance of addressing regional principalities through strategic prayer so that the Word of God could penetrate hearts effectively and produce lasting transformation.
+                        </p>
+                        <p class="text-muted" style="font-size:0.95rem;line-height:1.7;margin-top:0.75rem;">
+                          In 2022, Gathering of the Watchmen was birthed. This ministry was established with a divine mandate to mobilize a global prayer covering—beginning in our own city and expanding across the nation and beyond. The mission is to unify the Body of Christ through prayer gatherings; equip intercessors through teaching, training, and activation; and impact communities by feeding the homeless, evangelizing, and offering support wherever it is needed.
+                        </p>
+                      </div>
+                      <button class="founder-toggle" id="founder-toggle" onclick="toggleFounder()">...Read More</button>
+                    </div>
                 </div>
                 <div class="feature-split__image reveal-scale">
                     <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/f_auto,q_auto/v1771630535/IMG_7668_gumasf.jpg"
@@ -211,6 +233,21 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script>
+      function toggleFounder() {
+        var full = document.getElementById('founder-full');
+        var btn = document.getElementById('founder-toggle');
+        if (full.style.display === 'none') {
+          full.style.display = 'block';
+          btn.textContent = 'Show Less';
+          btn.classList.add('expanded');
+        } else {
+          full.style.display = 'none';
+          btn.textContent = '...Read More';
+          btn.classList.remove('expanded');
+        }
+      }
+    </script>
 </body>
 
 </html>

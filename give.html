@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Give — Gathering of the Watchmen</title>
+  <meta name="description"
+    content="Support the mission of Gathering of the Watchmen through tithes, offerings, and ministry support.">
+  <meta name="theme-color" content="#111214">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚜</text></svg>">
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" id="main-nav" aria-label="Main navigation">
+    <div class="container nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="Gathering of the Watchmen — Home">
+        <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1774820523/logo_jttb3h.png"
+          alt="Gathering of the Watchmen Logo" class="nav-logo-img">
+        <span class="nav__logo-text"><span class="logo-name">Gathering of the Watchmen</span></span>
+      </a>
+      <div class="nav__links">
+        <a href="index.html" class="nav__link">Home</a>
+        <a href="about.html" class="nav__link">About</a>
+        <a href="register.html" class="nav__link">Register</a>
+        <a href="give.html" class="nav__link active">Give</a>
+        <a href="events.html" class="nav__link">Events</a>
+        <a href="contact.html" class="nav__link">Contact</a>
+      </div>
+      <div class="flex" style="gap:1rem;align-items:center;">
+        <a href="register.html" class="nav__cta">Register Now</a>
+        <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span
+            class="bar"></span></button>
+      </div>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Mobile navigation">
+    <a href="index.html">Home</a><a href="about.html">About</a><a href="register.html">Register</a><a
+      href="give.html">Give</a><a href="events.html">Events</a><a href="contact.html">Contact</a>
+    <a href="register.html" class="btn btn--primary" style="margin-top:1rem;">Register Now</a>
+  </div>
+
+  <!-- PAGE HEADER -->
+  <section class="page-header" id="give-header">
+    <div class="page-header__bg">
+      <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1774820342/gotevent_wymfln.png"
+        alt="Support the Mission" loading="eager">
+      <div class="overlay"></div>
+    </div>
+    <div class="container page-header__content">
+      <span class="subtitle">Tithes &amp; Offerings</span>
+      <h1>Support the <span class="text-gold">Mission</span></h1>
+      <p class="hero__text" style="margin-bottom:0;">Your giving helps expand prayer, outreach, and impact across
+        communities. Every seed sown advances the Kingdom.</p>
+    </div>
+  </section>
+
+  <!-- GIVING AMOUNTS -->
+  <section class="section" id="give-amounts">
+    <div class="container">
+      <div class="give-layout">
+        <!-- Left: Amount Selection + Payment -->
+        <div class="give-main">
+          <!-- Amount Cards -->
+          <div class="give-section-block animate-on-scroll">
+            <h2>Choose an Amount</h2>
+            <p class="text-muted" style="margin-top:0.5rem;margin-bottom:var(--sp-8);">Select a giving amount below or
+              enter a custom amount.</p>
+
+            <div class="amount-grid">
+              <button class="amount-card" data-amount="25" onclick="selectAmount(this, 25)">
+                <span class="amount-card__value">$25</span>
+              </button>
+              <button class="amount-card" data-amount="50" onclick="selectAmount(this, 50)">
+                <span class="amount-card__value">$50</span>
+              </button>
+              <button class="amount-card amount-card--popular" data-amount="100" onclick="selectAmount(this, 100)">
+                <span class="amount-card__popular-tag">Most Given</span>
+                <span class="amount-card__value">$100</span>
+              </button>
+              <button class="amount-card" data-amount="250" onclick="selectAmount(this, 250)">
+                <span class="amount-card__value">$250</span>
+              </button>
+              <div class="amount-card amount-card--custom">
+                <label class="amount-card__custom-label">Custom</label>
+                <div class="amount-card__custom-input-wrap">
+                  <span class="amount-card__dollar">$</span>
+                  <input type="number" class="amount-card__custom-input" id="custom-amount"
+                    placeholder="Enter amount" min="1" onfocus="selectCustom(this)">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Payment Methods -->
+          <div class="give-section-block animate-on-scroll stagger-2" style="margin-top:var(--sp-10);">
+            <h2>Payment Method</h2>
+            <p class="text-muted" style="margin-top:0.5rem;margin-bottom:var(--sp-8);">After selecting your amount,
+              follow the instructions below to complete your giving.</p>
+
+            <div class="payment-grid">
+              <div class="payment-card">
+                <div class="payment-card__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                    <path d="M2 17l10 5 10-5" />
+                    <path d="M2 12l10 5 10-5" />
+                  </svg>
+                </div>
+                <h4>Zelle</h4>
+                <p class="text-muted" style="font-size:0.85rem;">Send directly to our Zelle account</p>
+              </div>
+              <div class="payment-card">
+                <div class="payment-card__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2" />
+                    <line x1="1" y1="10" x2="23" y2="10" />
+                  </svg>
+                </div>
+                <h4>Cash App</h4>
+                <p class="text-muted" style="font-size:0.85rem;">Quick and easy mobile giving</p>
+              </div>
+              <div class="payment-card">
+                <div class="payment-card__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path
+                      d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  </svg>
+                </div>
+                <h4>Apple Pay</h4>
+                <p class="text-muted" style="font-size:0.85rem;">Secure contactless payment</p>
+              </div>
+              <div class="payment-card">
+                <div class="payment-card__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2" />
+                    <line x1="1" y1="10" x2="23" y2="10" />
+                  </svg>
+                </div>
+                <h4>Debit / Credit</h4>
+                <p class="text-muted" style="font-size:0.85rem;">Standard card payment</p>
+              </div>
+            </div>
+
+            <div class="payment-notice">
+              <svg class="icon" viewBox="0 0 24 24" style="width:16px;height:16px;flex-shrink:0;">
+                <circle cx="12" cy="12" r="10" />
+                <line x1="12" y1="16" x2="12" y2="12" />
+                <line x1="12" y1="8" x2="12.01" y2="8" />
+              </svg>
+              <span>After selecting your amount, follow the instructions provided for your chosen payment method to
+                complete your giving.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Giving Form -->
+        <div class="give-sidebar animate-on-scroll stagger-3">
+          <div class="form-panel give-form-panel">
+            <h3>Record Your Gift</h3>
+            <p class="text-muted" style="font-size:0.9rem;margin-top:0.5rem;margin-bottom:var(--sp-6);">Submit your
+              details so we can acknowledge your generous giving.</p>
+
+            <form action="https://formsubmit.co/mekargm@gmail.com" method="POST" id="give-form">
+              <!-- Hidden FormSubmit fields -->
+              <input type="hidden" name="_subject" value="New Giving — Gathering of the Watchmen">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_next"
+                value="https://kignleon.github.io/Gathering-of-the-Watchmen-Website/thank-you.html">
+
+              <div class="form-group">
+                <label class="form-label" for="give-name">Full Name</label>
+                <input type="text" id="give-name" name="name" class="form-input form-input--lg"
+                  placeholder="Your full name" required autocomplete="name">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="give-email">Email</label>
+                <input type="email" id="give-email" name="email" class="form-input form-input--lg"
+                  placeholder="you@example.com" required autocomplete="email">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="give-amount">Amount ($)</label>
+                <input type="text" id="give-amount" name="amount" class="form-input form-input--lg"
+                  placeholder="100.00" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="give-note">Note <span style="opacity:0.5;">(Optional)</span></label>
+                <textarea id="give-note" name="note" class="form-textarea"
+                  placeholder="Any notes about your giving..." rows="3"></textarea>
+              </div>
+
+              <button type="submit" class="btn btn--primary btn--full btn--lg" style="margin-top:var(--sp-4);">
+                Submit Gift Record
+              </button>
+              <p class="form-trust" style="margin-top:var(--sp-4);">
+                <svg class="icon" viewBox="0 0 24 24" style="width:14px;height:14px;">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                </svg>
+                Your information is secure.
+              </p>
+            </form>
+          </div>
+
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCRIPTURE CTA -->
+  <section class="cta-section" style="margin-bottom:var(--sp-10);">
+    <div class="container">
+      <h2 data-header>"Give, and it will be given to you"</h2>
+      <p>Luke 6:38 — A good measure, pressed down, shaken together and running over, will be poured into your lap.</p>
+      <div class="flex-center" style="gap:1rem; flex-wrap:wrap;">
+        <a href="register.html" class="btn btn--dark">Register for Event</a>
+        <a href="contact.html" class="btn btn--outline"
+          style="border-color:var(--charcoal); color:var(--charcoal);">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__about">
+          <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1774820523/logo_jttb3h.png"
+            alt="Gathering of the Watchmen Logo" class="footer-logo-img">
+          <p>A ministry that mobilizes prayer in different regions — equipping, motivating, activating and
+            assisting in birthing out intercessors throughout the world.</p>
+          <div class="footer__socials">
+            <a href="#" aria-label="Facebook">
+              <svg class="icon" viewBox="0 0 24 24">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+              </svg>
+            </a>
+            <a href="#" aria-label="Instagram">
+              <svg class="icon" viewBox="0 0 24 24">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
+            </a>
+            <a href="#" aria-label="YouTube">
+              <svg class="icon" viewBox="0 0 24 24">
+                <path
+                  d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />
+                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer__heading">Navigation</h4>
+          <ul class="footer__links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="give.html">Give</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__heading">Connect</h4>
+          <ul class="footer__links">
+            <li><a href="prayer-request.html">Prayer Request</a></li>
+            <li><a href="world-prayer-targets.html">Prayer Targets</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+          <p style="color:var(--ivory-muted);font-size:0.85rem;margin-top:1.5rem;">
+            <strong style="color:var(--gold);">Email</strong><br>
+            <a href="mailto:mekargm@gmail.com">mekargm@gmail.com</a>
+          </p>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; 2025 Gathering of the Watchmen. All rights reserved.</span>
+        <span>Charlotte, NC &bull; Global Reach</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Amount selection
+    function selectAmount(el, amount) {
+      document.querySelectorAll('.amount-card').forEach(function (c) { c.classList.remove('selected'); });
+      el.classList.add('selected');
+      document.getElementById('custom-amount').value = '';
+      var amountField = document.getElementById('give-amount');
+      if (amountField) amountField.value = amount + '.00';
+    }
+
+    function selectCustom(input) {
+      document.querySelectorAll('.amount-card').forEach(function (c) { c.classList.remove('selected'); });
+      input.closest('.amount-card').classList.add('selected');
+      input.addEventListener('input', function () {
+        var amountField = document.getElementById('give-amount');
+        if (amountField && input.value) amountField.value = parseFloat(input.value).toFixed(2);
+      });
+    }
+  </script>
+</body>
+
+</html>
