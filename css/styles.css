@@ -1825,6 +1825,19 @@ p {
   object-position: center top;
 }
 
+.hero__bg-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(70vw, 500px);
+  height: auto;
+  object-fit: contain;
+  opacity: 0.35;
+  mix-blend-mode: lighten;
+  filter: drop-shadow(0 0 80px rgba(200, 168, 78, 0.15));
+}
+
 .overlay-b--soft {
   position: absolute;
   inset: 0;
