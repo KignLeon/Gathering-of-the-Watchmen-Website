@@ -2369,6 +2369,82 @@ p {
   margin-top: 1px;
 }
 
+/* Clickable Payment Cards */
+.payment-card--clickable {
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  position: relative;
+}
+
+.payment-card--clickable:hover {
+  border-color: rgba(200, 168, 78, 0.4);
+  background: rgba(200, 168, 78, 0.08);
+  box-shadow: 0 4px 20px rgba(200, 168, 78, 0.1);
+}
+
+.payment-card--clickable.copied {
+  border-color: rgba(76, 175, 80, 0.5);
+  background: rgba(76, 175, 80, 0.08);
+}
+
+.payment-card__handle {
+  color: var(--gold);
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  word-break: break-all;
+}
+
+.payment-card__action {
+  display: inline-block;
+  margin-top: 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ivory-muted);
+  padding: 4px 12px;
+  border: 1px solid rgba(245, 245, 240, 0.12);
+  border-radius: 100px;
+  transition: all var(--transition-base);
+}
+
+.payment-card--clickable:hover .payment-card__action {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+/* Copy Toast */
+.copy-toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--charcoal);
+  border: 1px solid rgba(76, 175, 80, 0.4);
+  color: #4CAF50;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 9999;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+.copy-toast.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
 /* Give Sidebar */
 .give-sidebar {
   position: sticky;

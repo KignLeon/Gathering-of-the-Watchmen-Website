@@ -111,7 +111,7 @@
               follow the instructions below to complete your giving.</p>
 
             <div class="payment-grid">
-              <div class="payment-card">
+              <a class="payment-card payment-card--clickable" href="#" onclick="copyToClipboard('gatheringofthewatchmen@gmail.com', 'Zelle email', this); return false;">
                 <div class="payment-card__icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
                     stroke-linejoin="round">
@@ -121,10 +121,11 @@
                   </svg>
                 </div>
                 <h4>Zelle</h4>
-                <p class="text-muted" style="font-size:0.85rem;">Send directly via Zelle</p>
-                <p style="color:var(--gold);font-size:0.9rem;font-weight:600;margin-top:0.5rem;">gatheringofthewatchmen@gmail.com</p>
-              </div>
-              <div class="payment-card">
+                <p class="text-muted" style="font-size:0.85rem;">Tap to copy Zelle email</p>
+                <p class="payment-card__handle">gatheringofthewatchmen@gmail.com</p>
+                <span class="payment-card__action">Tap to Copy</span>
+              </a>
+              <a class="payment-card payment-card--clickable" href="https://cash.app/$Gatheringofwatchmen" target="_blank" rel="noopener">
                 <div class="payment-card__icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
                     stroke-linejoin="round">
@@ -133,10 +134,11 @@
                   </svg>
                 </div>
                 <h4>Cash App</h4>
-                <p class="text-muted" style="font-size:0.85rem;">Quick and easy mobile giving</p>
-                <p style="color:var(--gold);font-size:0.9rem;font-weight:600;margin-top:0.5rem;">$Gatheringofwatchmen</p>
-              </div>
-              <div class="payment-card">
+                <p class="text-muted" style="font-size:0.85rem;">Tap to open Cash App</p>
+                <p class="payment-card__handle">$Gatheringofwatchmen</p>
+                <span class="payment-card__action">Open Cash App &rarr;</span>
+              </a>
+              <a class="payment-card payment-card--clickable" href="https://venmo.com/Tameka-Arceneaux" target="_blank" rel="noopener">
                 <div class="payment-card__icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
                     stroke-linejoin="round">
@@ -147,10 +149,11 @@
                   </svg>
                 </div>
                 <h4>Venmo</h4>
-                <p class="text-muted" style="font-size:0.85rem;">Send via Venmo</p>
-                <p style="color:var(--gold);font-size:0.9rem;font-weight:600;margin-top:0.5rem;">@Tameka-Arceneaux</p>
-              </div>
-              <div class="payment-card">
+                <p class="text-muted" style="font-size:0.85rem;">Tap to open Venmo</p>
+                <p class="payment-card__handle">@Tameka-Arceneaux</p>
+                <span class="payment-card__action">Open Venmo &rarr;</span>
+              </a>
+              <a class="payment-card payment-card--clickable" href="#" onclick="copyToClipboard('619-707-6734', 'Apple Pay number', this); return false;">
                 <div class="payment-card__icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
                     stroke-linejoin="round">
@@ -159,9 +162,18 @@
                   </svg>
                 </div>
                 <h4>Apple Pay</h4>
-                <p class="text-muted" style="font-size:0.85rem;">Secure contactless payment</p>
-                <p style="color:var(--gold);font-size:0.9rem;font-weight:600;margin-top:0.5rem;">619-707-6734</p>
-              </div>
+                <p class="text-muted" style="font-size:0.85rem;">Tap to copy phone number</p>
+                <p class="payment-card__handle">619-707-6734</p>
+                <span class="payment-card__action">Tap to Copy</span>
+              </a>
+            </div>
+
+            <!-- Copy Toast -->
+            <div class="copy-toast" id="copy-toast">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              <span id="copy-toast-text">Copied!</span>
             </div>
 
             <div class="payment-notice">
@@ -170,8 +182,7 @@
                 <line x1="12" y1="16" x2="12" y2="12" />
                 <line x1="12" y1="8" x2="12.01" y2="8" />
               </svg>
-              <span>After selecting your amount, follow the instructions provided for your chosen payment method to
-                complete your giving.</span>
+              <span>Click a payment method above to give directly. CashApp &amp; Venmo open in a new tab. Zelle &amp; Apple Pay copy the info to your clipboard.</span>
             </div>
           </div>
         </div>
@@ -337,6 +348,25 @@
       input.addEventListener('input', function () {
         var amountField = document.getElementById('give-amount');
         if (amountField && input.value) amountField.value = parseFloat(input.value).toFixed(2);
+      });
+    }
+
+    // Copy to clipboard with toast
+    function copyToClipboard(text, label, cardEl) {
+      navigator.clipboard.writeText(text).then(function() {
+        var toast = document.getElementById('copy-toast');
+        var toastText = document.getElementById('copy-toast-text');
+        toastText.textContent = label + ' copied!';
+        toast.classList.add('show');
+        // Brief highlight on the card
+        cardEl.classList.add('copied');
+        setTimeout(function() {
+          toast.classList.remove('show');
+          cardEl.classList.remove('copied');
+        }, 2200);
+      }).catch(function() {
+        // Fallback
+        prompt('Copy this ' + label + ':', text);
       });
     }
   </script>
